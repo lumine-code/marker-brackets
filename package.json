@@ -1,0 +1,30 @@
+{
+  "name": "scrollmap-brackets",
+  "description": "Show matching bracket markers on the scrollbar",
+  "repository": "https://github.com/asiloisad/pulsar-scrollmap-brackets",
+  "keywords": [
+    "scrollmap",
+    "bracket",
+    "matcher"
+  ],
+  "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.100.0 <2.0.0"
+  },
+  "main": "./lib/main",
+  "consumedServices": {
+    "bracketMatcherPlus": {
+      "versions": {
+        "1.0.0": "consumeBracketMatcherPlus"
+      }
+    }
+  },
+  "providedServices": {
+    "scrollmap": {
+      "versions": {
+        "1.0.0": "provideScrollmap"
+      }
+    }
+  }
+}
