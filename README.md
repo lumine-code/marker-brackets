@@ -1,14 +1,31 @@
 # scrollmap-brackets
 
-Show matching bracket positions on the scrollbar.
+Show matching bracket markers on the scrollbar. A layer package for [scrollmap](https://github.com/lumine-code/scrollmap).
+
+## Features
+
+- **Bracket markers**: shows the currently matched bracket pair on the scrollbar.
+- **Pair tracking**: markers follow the cursor as the highlighted pair changes.
+- **Tag support**: matching HTML tag pairs are marked as well.
 
 ## Installation
 
-To install `scrollmap-brackets` search for [scrollmap-brackets](https://web.pulsar-edit.dev/packages/scrollmap-brackets) in the Install pane of the Pulsar settings or run `ppm install scrollmap-brackets`. Alternatively, you can run `ppm install asiloisad/pulsar-scrollmap-brackets` to install a package directly from the GitHub repository.
+To install `scrollmap-brackets` search for _scrollmap-brackets_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/scrollmap-brackets`.
 
-Layer package for [scrollmap](https://github.com/asiloisad/pulsar-scrollmap).
+## Customization
 
-Requires [bracket-matcher-plus](https://github.com/asiloisad/pulsar-bracket-matcher-plus).
+The marker style can be adjusted in the `styles.less` file, e.g. change the marker color:
+
+```less
+.scrollmap .marker.marker-brackets {
+  background-color: var(--text-color-info);
+}
+```
+
+## Services
+
+- **scrollmap** (`1.0.0`): provided to render matching bracket markers as a layer on the editor scrollbar.
+- **bracket-matcher** (`1.0.0`): consumed to observe the currently highlighted bracket pair in each editor.
 
 ## Contributing
 
