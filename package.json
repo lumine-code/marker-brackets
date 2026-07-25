@@ -7,9 +7,12 @@
     "url": "https://github.com/lumine-code/scrollmap-brackets/issues"
   },
   "keywords": [
-    "scrollmap",
-    "bracket",
-    "matcher"
+    "overview-ruler",
+    "gutter",
+    "annotation",
+    "decoration",
+    "pair",
+    "matching"
   ],
   "version": "1.0.0",
   "license": "MIT",
