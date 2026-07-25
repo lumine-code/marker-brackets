@@ -1,6 +1,8 @@
 # scrollmap-brackets
 
-Show matching bracket markers on the scrollbar. A layer package for [scrollmap](https://github.com/lumine-code/scrollmap).
+Show matching bracket positions on the scrollbar.
+
+A layer package for [scrollmap](https://github.com/lumine-code/scrollmap).
 
 ## Features
 

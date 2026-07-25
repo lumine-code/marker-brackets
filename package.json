@@ -1,7 +1,7 @@
 {
   "name": "scrollmap-brackets",
   "author": "lumine-code",
-  "description": "Show matching bracket markers on the scrollbar",
+  "description": "Show matching bracket positions on the scrollbar.",
   "repository": "https://github.com/lumine-code/scrollmap-brackets",
   "bugs": {
     "url": "https://github.com/lumine-code/scrollmap-brackets/issues"
