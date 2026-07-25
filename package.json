@@ -26,7 +26,7 @@
   "consumedServices": {
     "bracket-matcher": {
       "versions": {
-        "1.0.0": "consumeBracketMatcher"
+        "^1.0.0": "consumeBracketMatcher"
       }
     }
   },

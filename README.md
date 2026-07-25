@@ -25,7 +25,7 @@ The marker style can be adjusted in the `styles.less` file, e.g. change the mark
 ## Services
 
 - **scrollmap** (`1.0.0`): provided to render matching bracket markers as a layer on the editor scrollbar.
-- **bracket-matcher** (`1.0.0`): consumed to observe the currently highlighted bracket pair in each editor.
+- **bracket-matcher** (`^1.0.0`): consumed to observe the currently highlighted bracket pair in each editor.
 
 ## Contributing
 
