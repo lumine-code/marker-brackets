@@ -30,7 +30,7 @@ describe("scrollmap-brackets", () => {
     jasmine.attachToDOM(atom.views.getView(atom.workspace));
     const pack = await atom.packages.activatePackage("scrollmap-brackets");
     mainModule = pack.mainModule;
-    provider = mainModule.provideScrollmap();
+    provider = mainModule.provideScrollmapLayer();
 
     // Consume the real service from the bundled bracket-matcher package.
     const bracketMatcher = await atom.packages.activatePackage("bracket-matcher");
