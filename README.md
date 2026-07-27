@@ -1,32 +1,32 @@
-# scrollmap-brackets
+# marker-brackets
 
-Show matching bracket positions on the scrollbar.
+Show matching bracket positions on the scrollbar and minimap.
 
-A layer package for [scrollmap](https://github.com/lumine-code/scrollmap).
+A marker layer, drawn by [scrollmap](https://github.com/lumine-code/scrollmap) and [minimap](https://github.com/lumine-code/minimap).
 
 ## Features
 
-- **Bracket markers**: shows the currently matched bracket pair on the scrollbar.
+- **Bracket markers**: shows the currently matched bracket pair on every map.
 - **Pair tracking**: markers follow the cursor as the highlighted pair changes.
 - **Tag support**: matching HTML tag pairs are marked as well.
 
 ## Installation
 
-To install `scrollmap-brackets` search for _scrollmap-brackets_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/scrollmap-brackets`.
+To install `marker-brackets` search for _marker-brackets_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/marker-brackets`.
 
 ## Customization
 
 The marker style can be adjusted in the `styles.less` file, e.g. change the marker color:
 
 ```less
-.scrollmap .marker.marker-brackets {
+.marker.marker-brackets {
   background-color: var(--text-color-info);
 }
 ```
 
 ## Services
 
-- **[scrollmap.layer](https://lumine-code.github.io/docs.html#services/scrollmap.layer)** (`1.0.0`): provided to render matching bracket markers as a layer on the editor scrollbar.
+- **[marker.layer](https://lumine-code.github.io/docs.html#services/marker.layer)** (`1.0.0`): provided to render matching bracket markers as a layer on the editor's overview maps.
 - **[bracket-matcher](https://lumine-code.github.io/docs.html#services/bracket-matcher)** (`^1.0.0`): consumed to observe the currently highlighted bracket pair in each editor.
 
 ## Contributing
