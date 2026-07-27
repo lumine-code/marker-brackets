@@ -102,6 +102,19 @@ describe("marker-brackets", () => {
     expect(second.items).toEqual([{ row: 2 }, { row: 4 }]);
   });
 
+  it("forgets the editor once its last layer detaches", () => {
+    // The per-editor entry outlives the layers that share it, so it may only be
+    // dropped when the last renderer detaches -- and never before.
+    const second = makeLayer(editor);
+    expect(mainModule.layers.get(editor).size).toBe(2);
+
+    layer.disposables.dispose();
+    expect(mainModule.layers.get(editor).size).toBe(1);
+
+    second.disposables.dispose();
+    expect(mainModule.layers.has(editor)).toBe(false);
+  });
+
   it("is wired to the bundled bracket-matcher through the services hub", () => {
     // Both packages are active, so the services hub connected them on its own;
     // the layer keeps updating even without the manual consumer subscription.
