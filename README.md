@@ -26,8 +26,8 @@ The marker style can be adjusted in the `styles.less` file, e.g. change the mark
 
 ## Services
 
-- **[marker.layer](https://lumine-code.github.io/docs.html#services/marker.layer)** (`1.0.0`): provided to render matching bracket markers as a layer on the editor's overview maps.
-- **[bracket-matcher](https://lumine-code.github.io/docs.html#services/bracket-matcher)** (`^1.0.0`): consumed to observe the currently highlighted bracket pair in each editor.
+- **marker.layer** (`1.0.0`): provided to render matching bracket markers as a layer on the editor's overview maps.
+- **bracket-matcher** (`^1.0.0`): consumed to observe the currently highlighted bracket pair in each editor.
 
 ## Contributing
 
