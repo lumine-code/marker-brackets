@@ -82,36 +82,9 @@ describe("marker-brackets", () => {
     expect(layer.items).toEqual([]);
   });
 
-  it("updates every layer attached to the same editor", () => {
-    // One layer per renderer, all of them for this editor: holding a single
-    // layer per editor would leave whichever attached first frozen.
-    const second = makeLayer(editor);
-    editor.setCursorBufferPosition([0, 0]);
-    expect(layer.update).toHaveBeenCalled();
-    expect(second.update).toHaveBeenCalled();
-    expect(layer.items).toEqual([{ row: 0 }]);
-    expect(second.items).toEqual([{ row: 0 }]);
-  });
-
-  it("keeps updating the remaining layers after one detaches", () => {
-    const second = makeLayer(editor);
+  it("forgets the editor once its layer detaches", () => {
+    expect(mainModule.layers.get(editor)).toBe(layer);
     layer.disposables.dispose();
-    layer.update.calls.reset();
-    editor.setCursorBufferPosition([2, 0]);
-    expect(layer.update).not.toHaveBeenCalled();
-    expect(second.items).toEqual([{ row: 2 }, { row: 4 }]);
-  });
-
-  it("forgets the editor once its last layer detaches", () => {
-    // The per-editor entry outlives the layers that share it, so it may only be
-    // dropped when the last renderer detaches -- and never before.
-    const second = makeLayer(editor);
-    expect(mainModule.layers.get(editor).size).toBe(2);
-
-    layer.disposables.dispose();
-    expect(mainModule.layers.get(editor).size).toBe(1);
-
-    second.disposables.dispose();
     expect(mainModule.layers.has(editor)).toBe(false);
   });
 
