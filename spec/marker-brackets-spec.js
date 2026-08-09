@@ -1,4 +1,4 @@
-const { CompositeDisposable } = require("atom");
+const { CompositeDisposable } = require("lumine");
 
 describe("marker-brackets", () => {
   let editor, mainModule, provider, layer, layers, api, consumerDisposable;
@@ -28,16 +28,16 @@ describe("marker-brackets", () => {
   }
 
   beforeEach(async () => {
-    jasmine.attachToDOM(atom.views.getView(atom.workspace));
-    const pack = await atom.packages.activatePackage("marker-brackets");
+    jasmine.attachToDOM(lumine.views.getView(lumine.workspace));
+    const pack = await lumine.packages.activatePackage("marker-brackets");
     mainModule = pack.mainModule;
     provider = mainModule.provideMarkerLayer();
 
     // Consume the real service from the bundled bracket-matcher package.
-    const bracketMatcher = await atom.packages.activatePackage("bracket-matcher");
+    const bracketMatcher = await lumine.packages.activatePackage("bracket-matcher");
     api = bracketMatcher.mainModule.provideBracketMatcher();
 
-    editor = await atom.workspace.open();
+    editor = await lumine.workspace.open();
     editor.setText("(hello)\nworld\n{\n  body\n}\n");
     layers = [];
     layer = makeLayer(editor);
@@ -52,7 +52,7 @@ describe("marker-brackets", () => {
   });
 
   it("activates and provides a marker layer descriptor", () => {
-    expect(atom.packages.isPackageActive("marker-brackets")).toBe(true);
+    expect(lumine.packages.isPackageActive("marker-brackets")).toBe(true);
     expect(provider.name).toBe("brackets");
     expect(typeof provider.description).toBe("string");
     expect(typeof provider.getItems).toBe("function");
@@ -99,7 +99,7 @@ describe("marker-brackets", () => {
   });
 
   it("stops updating the layer once the consumer is disposed", () => {
-    const { Emitter } = require("atom");
+    const { Emitter } = require("lumine");
     const emitter = new Emitter();
     const fakeApi = {
       getMatchRanges: () => null,
