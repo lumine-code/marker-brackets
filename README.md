@@ -12,7 +12,7 @@ A marker layer, drawn by [scrollmap](https://github.com/lumine-code/scrollmap) a
 
 ## Installation
 
-To install `marker-brackets` search for _marker-brackets_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/marker-brackets`.
+To install `marker-brackets` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/marker-brackets`.
 
 ## Customization
 
@@ -26,8 +26,8 @@ The marker style can be adjusted in the `styles.css` file, e.g. change the marke
 
 ## Services
 
-- **marker.layer** (`1.0.0`): provided to render matching bracket markers as a layer on the editor's overview maps.
-- **bracket-matcher** (`^1.0.0`): consumed to observe the currently highlighted bracket pair in each editor.
+- `marker.layer`: provided to render matching bracket markers as a layer on the editor's overview maps.
+- `bracket-matcher`: consumed to observe the currently highlighted bracket pair in each editor.
 
 ## Contributing
 
