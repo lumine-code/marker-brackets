@@ -1,5 +1,8 @@
 # marker-brackets
 
+> [!WARNING]
+> **This package is deprecated.** Its marker layer now ships with [bracket-matcher](https://github.com/lumine-code/bracket-matcher) itself — the marker-* adapter packages were folded into their host packages, and this layer's settings moved to `bracket-matcher.marker.*`. This repository is archived and no longer maintained.
+
 Show matching bracket positions on the scrollbar and minimap.
 
 A marker layer, drawn by [scrollmap](https://github.com/lumine-code/scrollmap) and [minimap](https://github.com/lumine-code/minimap).
