@@ -29,6 +29,7 @@ describe("marker-brackets", () => {
 
   beforeEach(async () => {
     jasmine.attachToDOM(lumine.views.getView(lumine.workspace));
+    await lumine.packages.activatePackage("language-javascript");
     const pack = await lumine.packages.activatePackage("marker-brackets");
     mainModule = pack.mainModule;
     provider = mainModule.provideMarkerLayer();
@@ -38,7 +39,10 @@ describe("marker-brackets", () => {
     api = bracketMatcher.mainModule.provideBracketMatcher();
 
     editor = await lumine.workspace.open();
+    editor.setGrammar(lumine.grammars.grammarForScopeName("source.js"));
     editor.setText("(hello)\nworld\n{\n  body\n}\n");
+    await editor.languageMode.ready;
+    await editor.languageMode.atTransactionEnd();
     layers = [];
     layer = makeLayer(editor);
     consumerDisposable = mainModule.consumeBracketMatcher(api);
@@ -88,7 +92,7 @@ describe("marker-brackets", () => {
     expect(mainModule.layers.has(editor)).toBe(false);
   });
 
-  it("is wired to the bundled bracket-matcher through the services hub", () => {
+  it("is wired to bracket-matcher through the services hub", () => {
     // Both packages are active, so the services hub connected them on its own;
     // the layer keeps updating even without the manual consumer subscription.
     consumerDisposable.dispose();

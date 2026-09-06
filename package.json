@@ -21,6 +21,9 @@
   "engines": {
     "lumine": "^1.0.0"
   },
+  "specPackages": [
+    "bracket-matcher"
+  ],
   "main": "./lib/main",
   "files": [
     "lib",
